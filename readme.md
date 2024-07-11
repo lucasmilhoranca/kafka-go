@@ -16,12 +16,12 @@ go get -u github.com/IBM/sarama
 
 Suba o Kafka e Zookeeper:
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Crie um tópico no Kafka:
 ```bash
-docker-compose exec kafka kafka-topics.sh --create --topic meu-topico --partitions 1 --replication-factor 1 --bootstrap-server localhost:9092
+docker compose exec kafka kafka-topics.sh --create --topic meu-topico --partitions 1 --replication-factor 1 --bootstrap-server localhost:9092
 ```
 
 Execute o consumidor:
@@ -31,7 +31,7 @@ go run consumer.go
 
 Use o console producer do Kafka para enviar mensgens para o topico:
 ```bash
-docker-compose exec kafka kafka-console-producer.sh --topic meu-topico --bootstrap-server localhost:9092
+docker compose exec kafka kafka-console-producer.sh --topic meu-topico --bootstrap-server localhost:9092
 ```
 
 Execute o produtor par enviar uma mensagem simples:
